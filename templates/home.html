@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+
+
+
+{% block title %}1조 블로그{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "css/home1.css" %}{% endblock %}
+
+{% block content %}
+
+<div id="content_home">
+
+  <!-- <embed src="/static/wm.m4a" autostart="true" hidden="true" loop="-"> -->
+
+    <!-- <div id="homeimg">
+        <a href="/"><img src="{% static 'img/NUESTW_HERE.jpg' %}" style="height:256px;"/></a>
+        <h4 style="margin: 0;">1조 장고사이트</h4>
+    </div> -->
+
+
+
+    <h2>앱을 선택해주세요</h2>
+    <div class="box">
+      <div class="pic">
+<!--         <img src="{% static 'img/harry.gif' %}"/> -->
+        <a  href="{% url 'home' %}"><img src="{% static 'img/harry.gif' %}"/></a>
+      </div>
+
+      <div class="appsgroup">
+        <div class="appsgo">
+          <div class="bg">
+              <a href="{% url 'blog:index' %}">
+              <img src="{% static 'img/blog.jpg' %}"/>
+              <br>
+              블로그 -
+                <a href="{% url 'blog:add' %}" >추가</a> /
+                <a href="{% url 'blog:change' %}">변경</a>
+              </a>
+          </div>
+          <div class="bm">
+            <a href="{% url 'bookmark:index' %}">
+            <img src="{% static 'img/bookmark.jpg' %}"/>
+              <br>
+            북마크 -
+              <a href="{% url 'bookmark:add' %}">추가</a> /
+              <a href="{% url 'bookmark:change' %}">변경</a>
+            </a>
+          </div>
+
+        </div>
+        <div class="appsgt">
+          <div class="pho">
+
+              <a href="{% url 'photo:index' %}">
+              <img src="{% static 'img/photo.jpg' %}"/>
+                <br>
+              사진 -
+                <a href="{% url 'photo:photo_add' %}">추가</a> /
+                <a href="{% url 'photo:photo_change' %}">변경</a>
+              </a>
+          </div>
+          <div class="alb">
+            <a href="{% url 'photo:index' %}">
+              <img src="{% static 'img/album.jpg' %}"/>
+                <br>
+              앨범 -
+              <a href="{% url 'photo:album_add' %}">추가</a> /
+              <a href="{% url 'photo:album_change' %}">변경</a>
+              </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+      <!-- <div class="img">
+        <a href="{% url 'bookmark:index' %}"><img src="{% static 'img/bookmark.jpeg' %}"/></a>
+      </div>
+      <div class="ex">
+        <h2><a href="{% url 'bookmark:index' %}">북마크</a></h2>
+          <p>
+          즐겨 찾기 응용 프로그램을 사용하여 즐겨 찾기를 저장할 수 있습니다.<br>
+          북마크를 업데이트하거나 삭제할 수도 있습니다.
+        </p>
+        <a href="{% url 'bookmark:add' %}">추가</a>
+        <a href="{% url 'bookmark:change' %}">변경</a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="ex">
+        <h2><a href="{% url 'blog:index' %}">블로그</a></h2>
+          <p>이 응용 프로그램은 일상적인 이벤트를 기록하거나 취미, 기법 등의 관심사를 작성할 수 있게 해 줍니다.
+        </p>
+        <a href="{% url 'blog:add' %}">추가</a>
+        <a href="{% url 'blog:change' %}">변경</a>
+      </div >
+      <div class="img">
+        <a href="{% url 'blog:index' %}"><img src="{% static 'img/blog.jpg' %}" style="height:256px; width:100%;"/></a>
+      </div>
+    </div>
+    <div class="box">
+      <div class="img">
+        <a href="{% url 'bookmark:index' %}"><img src="{% static 'img/photoalbum.jpg' %}" style="height:256px; width:100%;"/></a>
+      </div>
+      <div class="ex">
+        <h2><a href="{% url 'photo:index' %}">사진과 앨범</a></h2>
+          <p>응용 프로그램을 통해 자신만의 사진을 업로드할 수 있습니다. <br>앨범을 삭제하면 해당 앨범의 모든 사진이 삭제됩니다.
+        </p>
+        <a href="{% url 'photo:photo_add' %}">사진 추가</a>
+        <a href="{% url 'photo:photo_change' %}">사진 변경</a><br>
+        <a href="{% url 'photo:album_add' %}">앨범 추가</a>
+        <a href="{% url 'photo:album_change' %}">앨범 변경</a>
+      </div>
+    </div> -->
+    <!-- <table id="applist">
+        <tr>
+        <td><b><i><a href="{% url 'bookmark:index' %}">북마크</a></i><b></td>
+        <td>즐겨 찾기 응용 프로그램을 사용하여 즐겨 찾기를 저장할 수 있습니다. 북마크를 업데이트하거나 삭제할 수도 있습니다.</td>
+        <td class="Edit"><i><a href="{% url 'bookmark:add' %}">추가</a></i></td>
+        <td class="Edit"><i><a href="{% url 'bookmark:change' %}">변경</a></i></td>
+        </tr>
+        <tr>
+        <td><b><i><a href="{% url 'blog:index' %}">블로그</a></i><b></td>
+        <td>이 응용 프로그램은 일상적인 이벤트를 기록하거나 취미, 기법 등의 관심사를 작성할 수 있게 해 줍니다.</td>
+        <td class="Edit"><i><a href="{% url 'blog:add' %}">추가</a></i></td>
+        <td class="Edit"><i><a href="{% url 'blog:change' %}">변경</a></i></td>
+        </tr>
+        <tr>
+        <td><b><i><a href="{% url 'photo:index' %}">사진</a></i><b></td>
+        <td>이 응용 프로그램을 통해 자신만의 사진을 업로드할 수 있습니다. 앨범을 삭제하면 해당 앨범의 모든 사진이 삭제됩니다.</td>
+        <td class="Edit"><i><a href="{% url 'photo:album_add' %}">추가</a></i></td>
+        <td class="Edit"><i><a href="{% url 'photo:album_change' %}">변경</a></i></td>
+        </tr>
+        <tr>
+        <td><b><i><a href="{% url 'polls:index' %}">설문</a></i><b></td>
+        <td>이 응용 프로그램을 통해 자신만의 설문조사를 만들 수 있습니다.</td>
+        <td class="Edit"><i><a href="">추가</a></i></td>
+        <td class="Edit"><i><a href="">변경</a></i></td>
+        </tr>
+    </table> -->
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div id="footer">
+    &copy; 1조 블로그( 문혜리, 조혜영, 정현진 )
+</div>
+{% endblock footer %}
